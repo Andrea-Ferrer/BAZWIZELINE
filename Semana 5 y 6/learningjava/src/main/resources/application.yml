@@ -1,0 +1,11 @@
+consumers:
+ login: "/api/login"
+ createUser: "/api/createUser"
+ updatePassword: "/api/updatePassword"
+ createUsers: "/api/createUsers"
+ userAccount: "/api/getUserAccount"
+ accounts: "/api/getAccounts"
+ accountsGroupByType: "/api/getAccountsGroupByType"
+
+server:
+ port: 8080

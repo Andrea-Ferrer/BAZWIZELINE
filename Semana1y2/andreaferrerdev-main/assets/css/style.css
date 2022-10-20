@@ -1,0 +1,300 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Raleway', sans-serif;
+}
+/*cuerpo pagina*/
+body {
+    background-color: #f4f4f4;
+    width: 100%;
+}
+/*header y menu*/
+header{ 
+    width: 100%
+}
+nav {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    padding: 15px;
+}
+
+ul {
+    display: flex;
+    margin-right: 60px;
+    padding: 8px;
+    color: #f4f4f4;
+    margin-bottom: 0%;
+}
+ul a {
+    color: #f4f4f4;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 15px;
+    list-style: none;
+}
+ul a:hover{
+    text-decoration: none;
+    color: #f4f4f4;
+}
+/*Fullstack developer*/
+.presentacion {
+    width: 100%;
+    padding-top: 7%;
+    display: grid;
+    grid-template-columns:50% 50%;
+    align-items: center;
+}
+.titulo {
+    padding-left: 10%;
+    font-size: 80px;
+    width: 100%;
+}
+.sobremi{
+    font-size: 30px;
+    width: 60%;
+    padding-left: 5%;
+    padding-top: 13%;
+}
+/*foto de mi*/
+.fotografia {
+    width: 38%;
+    padding-left: 30%;
+}
+/*seccion de habilidades*/
+.habilidades{
+    padding-left: 5%;
+    padding-top: 15%;
+    padding-bottom: 12%;
+    font-size: 25px;
+    color: #979696;
+}
+.iconos img{
+    padding-top: 5%;
+    padding-left: 7%;
+    width: 80%;
+}
+/* formulario de pagina de contacto*/
+.formulario{
+    width: 80%;
+    margin: 10% auto;
+}
+.subtitulo{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.titulo-proyecto{
+    margin: 2px auto;
+}
+/*slider*/
+
+/*contenedor principal y flechas*/
+.contenedor-padre{
+    padding-left: 5%;
+    padding-top: 8%;
+    width: 90%;
+    color: #979696;
+}
+.contenedor-padre h2{
+    font-size: 35px;
+}
+.contenedor-principal{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.flecha-izquierda{
+    height: 20px;
+    position: absolute;
+}
+.flecha-izquierda:hover{
+    cursor: pointer;
+}
+.flecha-derecha{
+    height: 20px;
+    position: absolute;
+    right: 0%;
+}
+.flecha-derecha:hover{
+    cursor: pointer;
+}
+.slider{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 20px 0px;
+}
+.contenedor-slider{
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+.card-slider{
+    padding: 2px;
+    min-width: 20%;
+    transition: .3s ease all;
+}
+.card.hover{
+    scale: (1.2);
+    transform-origin: center;
+}
+.imagen{
+    width: 100%;
+    border-radius: 5px;
+}
+h5{
+    text-align: center;
+}
+/*Seccion codepen*/
+.codepen{
+    width: 90%;
+    margin: 0 auto;
+}
+div iframe{
+    border-radius: 15px;
+    overflow-x: hidden;
+    margin-bottom: 20px;;
+}
+.subtitle{
+    padding-top: 8%;
+    padding-bottom: 2%;
+    font-size: 35px;
+    color: #979696;
+}
+
+/*Segundo slider*/
+
+.contenedor-madre{
+    padding-left: 5%;
+    padding-top: 8%;
+    width: 90%;
+    color: #979696;
+}
+.contenedor-madre h2{
+    font-size: 35px;
+}
+.contenedor-principal-madre{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.flecha-izquierda-madre{
+    height: 20px;
+    position: absolute;
+}
+.flecha-izquierda-madre:hover{
+    cursor: pointer;
+}
+.flecha-derecha-madre{
+    height: 20px;
+    position: absolute;
+    right: 0%;
+}
+.flecha-derecha-madre:hover{
+    cursor: pointer;
+}
+.slider-madre{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 20px 0px;
+}
+.contenedor-slider-madre{
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+.card-slider-madre{
+    padding: 2px;
+    min-width: 20%;
+    transition: .3s ease all;
+}
+.card-slider-madre.hover{
+    scale: (1.2);
+    transform-origin: center;
+}
+.imagen{
+    width: 100%;
+    border-radius: 5px;
+}
+h5{
+    text-align: center;
+}
+
+
+/*seccion de portafolio*/
+.margen-trabajos{
+    margin: 10px;
+    width: 30%
+}
+/*segundo slider
+
+/*media queries*/
+@media screen and (max-width:800px) {
+    /*header y menu*/
+    .logo {
+        padding: 15px;
+        height: 22px;
+    }
+    ul{
+        margin-right: 30px;
+    }
+    ul a{
+        font-size: 12px;
+    }
+    /*Fullstack developer*/
+    .titulo{
+        padding-top: 23%;
+        font-size: 57px;
+        padding-bottom: 20%;
+    }
+    /*Foto sobre mi*/
+    .fotografia{
+        display: none;
+    }
+    /*Descripcion sobre mi*/
+    .sobremi{
+        font-size: 17px;
+        width: 80%;
+        padding-left: 6%;
+        padding-top: 13%;
+        padding-bottom: 13%;
+        color: #979696;
+    }
+    /*Seccion habilidades*/
+    .habilidades{
+        font-size: 18px;
+    }
+    .iconos img {
+        width: 90%;
+        padding-left: 0%;
+    }
+    /*Slider*/
+    .contenedor-padre h2{
+        font-size: 30px;
+    }
+    .flecha-izquierda{
+        display: none;
+    }
+    .flecha-derecha{
+        display: none;
+    }
+    /*
+    .flecha-izquierda-dos{
+        display: none;
+    }
+    .flecha-derecha-dos{
+        display: none;
+    }*/
+    .contenedor-slider{
+        overflow: visible
+    }
+    .slider{
+        display: flex;
+        flex-wrap: wrap;
+        grid-template-columns: 3
+    }
+    .card-slider{
+        width: 30%;
+    }
+}

@@ -1,0 +1,84 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.4'
+	id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+	id 'java'
+	id 'jacoco'
+}
+
+group = 'com.wizeline'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencyManagement {
+	imports {
+		mavenBom 'org.springframework.cloud:spring-cloud-dependencies:2021.0.3'
+	}
+}
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation group: 'org.json', name: 'json', version: '20220320'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.7.4'
+	implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.7.4'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '2.7.4'
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '3.1.4'	
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-ribbon', version: '2.2.10.RELEASE'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.1'
+	testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.23.1'
+	testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.8.0'
+	testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '4.8.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+	finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+	dependsOn test
+	reports {
+		xml.enabled false
+		csv.enabled false
+		html.enabled true
+	}
+	finalizedBy jacocoTestCoverageVerification
+}
+
+jacocoTestCoverageVerification {
+	violationRules {
+		rule {
+			element = 'CLASS'
+			
+			limit {
+				counter = 'LINE'
+				value = 'COVEREDRATIO'
+				minimum = 0.8
+			}
+			limit {
+				counter = 'METHOD'
+				value = 'COVEREDRATIO'
+				minimum = 0.8
+			}
+						limit {
+				counter = 'BRANCH'
+				value = 'COVEREDRATIO'
+				minimum = 0.5
+			}
+			excludes = [
+				'com.wizeline.learningjava.service.*',
+				'com.wizeline.learningjava.config.*',
+				'com.wizeline.learningjava.model.*',
+				'com.wizeline.learningjava.utils.singleton.*',
+				'com.wizeline.learningjava.utils.*',
+				'com.wizeline.learningjava.LearningJavaGradleApplication'
+			]
+		}
+  }
+}

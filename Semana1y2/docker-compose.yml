@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  httpbin:
+    image: "httpd"
+    volumes:
+        - "andreaferrerdev-main/index.html"
+    ports:
+        - "80:80"
+    
